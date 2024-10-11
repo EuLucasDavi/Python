@@ -1,3 +1,3 @@
 T = int(input())
 comp = list(map(int, input().split()))
-print(comp)
+print(comp.count(T))
