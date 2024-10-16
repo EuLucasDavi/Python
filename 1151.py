@@ -1,7 +1,9 @@
-# N = int(input())
-# a = init = 0
-# for i in range(0, N):
-#     init += a
-#     a = init
-#     init += 1
-#     print(a)
+n = int(input())
+a, b = 0, 1
+for i in range(n):
+    if i == 0:
+        print(a, end="")
+    else:
+        print(" " + str(b), end="")
+        a, b = b, a + b
+print()
