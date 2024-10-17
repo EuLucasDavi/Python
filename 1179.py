@@ -6,17 +6,31 @@ for _ in range(15):
             for _ in range(len(par)):
                 print(f"par[{_}] = {par[_]}")
             par.clear()
-        else:
-            par.append(X)
+        par.append(X)
     else:
         if len(impar) == 5:
             for _ in range(len(impar)):
-                print(f"par[{_}] = {impar[_]}")
+                print(f"impar[{_}] = {impar[_]}")
             impar.clear()
-        else:
-            impar.append(X)
+        impar.append(X)
 
 for _ in range(len(impar)):
     print(f"impar[{_}] = {impar[_]}")
 for _ in range(len(par)):
     print(f"par[{_}] = {par[_]}")
+
+#---------------------------------------------------------------
+# par = []
+# impar = []
+# for _ in range(15):
+#     X = int(input())
+#     lista = par if X % 2 == 0 else impar
+#     lista.append(X)
+#     if len(lista) == 5:
+#         for i, v in enumerate(lista):
+#             print(f"{'par' if lista == par else 'impar'}[{i}] = {v}")
+#         lista.clear()
+
+# for nome, lista in [("impar", impar), ("par", par)]:
+#     for i, v in enumerate(lista):
+#         print(f"{nome}[{i}] = {v}")
