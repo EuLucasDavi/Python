@@ -1,22 +1,15 @@
-par = []
-impar = []
-for _ in range(15):
-    X = int(input())
-    if X % 2 == 0:
-        if len(par) == 5:
-            for i in range(len(par)):
-                print(f"par[{i}] = {par[i]}")
-            par.clear()
-        par.append(X)
+qtd = int(input())
+res = []
+for _ in range(qtd):
+    values = list(map(float, input().split()))
+    values[0], values[1] = int(values[0]), int(values[1])
+    anos = 0
+    while values[0] <= values[1] and anos <= 100:  # Limite de 100 anos
+        values[0] += int(values[0] * (values[2] / 100))  # Trunca o crescimento
+        values[1] += int(values[1] * (values[3] / 100))  # Trunca o crescimento
+        anos += 1
+    if anos <= 100:
+        res.append(f"{anos} anos.")
     else:
-        if len(impar) == 5:
-            for i in range(len(impar)):
-                print(f"impar[{i}] = {impar[i]}")
-            impar.clear()
-        impar.append(X)
-
-# Imprime os valores restantes nos vetores impar e par
-for i in range(len(impar)):
-    print(f"impar[{i}] = {impar[i]}")
-for i in range(len(par)):
-    print(f"par[{i}] = {par[i]}")
+        res.append("Mais de 1 seculo.")
+print(*res, sep="\n")

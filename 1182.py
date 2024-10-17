@@ -1,4 +1,4 @@
-L = int(input())
+C = int(input())
 O = input()
 
 matriz = []
@@ -8,8 +8,10 @@ for i in range(12):
         value = float(input())
         linha.append(value)
     matriz.append(linha)
-
-if O == "S":
-    print(f"{sum(matriz[L]):.1f}")
+res = []
+for i in range(12):
+    res.append(matriz[i][C])
+if O == 'S':
+    print(f"{sum(res):.1f}")
 elif O == "M":
-    print(f"{sum(matriz[L])/len(matriz[L]):.1f}")
+    print(f"{sum(res) / len(res):.1f}")
