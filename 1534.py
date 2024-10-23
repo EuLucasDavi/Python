@@ -5,11 +5,13 @@ try:
             linha = [0] * N
             matriz.append(linha)
             for j in range(N):
-                if i == j:
+                if j == len(linha) -1 - i:
+                    matriz[i][j] = 2
+                elif i == j:
                     matriz[i][j] = 1
                 else:
                     matriz[i][j] = 3
         for _ in matriz:
-            print(*_)
+            print(*_, sep = "")
 except EOFError:
     pass
